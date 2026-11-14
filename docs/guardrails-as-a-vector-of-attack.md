@@ -300,7 +300,7 @@ seed — для проверки, что разброс меньше измер�
 Улучшение механизма не смешивается с одновременной заменой правил и модели-исполнителя.
 
 ## 9. Break-even
-[guardrails-break-even.md](guardrails-break-even.md)
+[kb/guardrails-break-even.md](kb/guardrails-break-even.md)
 
 
 ## 10. Режимы атакующего
@@ -366,7 +366,7 @@ seed — для проверки, что разброс меньше измер�
 
 **Риск пересечения.** Если отдельная работа появится с тем же сочетанием, новизна сужается до
 методики и данных: полигон, корпус с независимыми исходами и break-even-таблица. Детальный разбор — в
-[guardrails-research-risks.md](guardrails-research-risks.md), раздел 4.1.
+[kb/guardrails-research-risks.md](kb/guardrails-research-risks.md), раздел 4.1.
 
 ## 13. Проверки до старта
 

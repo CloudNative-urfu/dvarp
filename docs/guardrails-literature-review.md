@@ -355,7 +355,7 @@ collection/release/deployment/production [2605.01644].
 
 Отсюда два следствия. Первое: заявлять уникальность нужно **точно**, через комбинацию,
 а не через «первый бенчмарк». Второе: окно уязвимо, поэтому pre-registration и ранняя
-фиксация claim'а важны (см. `docs/guardrails-research-risks.md`, §6–7).
+фиксация claim'а важны (см. `docs/kb/guardrails-research-risks.md`, §6–7).
 
 ### 5.5. Что мы заявляем и что не заявляем
 
