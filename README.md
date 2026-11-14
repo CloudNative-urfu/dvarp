@@ -9,12 +9,12 @@
 ## Что внутри
 
 Документация разделена на два слоя (`docs/README.md` — карта и критерии):
-человеко-читаемые документы для ознакомления и база знаний для агентов с каноном.
+человеко-читаемые документы для ознакомления и база знаний для агентов.
 
 | Путь | Содержимое |
 |---|---|
-| `docs/` | Человеко-читаемый слой: рамка исследования, новизна, адресаты, обзор поля, черновик статьи |
-| `docs/kb/` | База знаний для агентов: требования (FR/NFR) и «Отклонения канона», спецификация полигона, формулы `L*`, реестр рисков, словарь терминов |
+| `docs/` | Человеко-читаемый слой: рамка исследования, требования и словарь (канон), новизна, адресаты, обзор поля, черновик статьи |
+| `docs/kb/` | База знаний для агентов: спецификация полигона, формулы `L*`, реестр рисков, референсы |
 | `docs/kb/methodology/` | Разбор методологий ближайших работ и OSS-ассетов литобзора: что переносится в полигон напрямую, что через адаптацию, что непереносимо (#7) |
 | `docs/kb/landscape/` | Обзор продакшен-процессов поддержки с чат-агентами: кейсы внедрений, метрики, референсные архитектуры |
 | `docs/kb/research-cycles/` | Итоги исследовательских кампаний: разбор 9 циклов + верифицированные сырые данные |
@@ -35,13 +35,14 @@
    исследования.
 4. [`docs/paper/draft.md`](docs/paper/draft.md) — черновик статьи.
 
-Для агентов (канон и формулы — база знаний):
+Для агентов (канон и формулы):
 
-- [`docs/kb/README.md`](docs/kb/README.md) — индекс базы знаний; канон:
-  [`docs/kb/guardrails_requirements.md`](docs/kb/guardrails_requirements.md) (FR/NFR,
-  «Отклонения канона»), [`docs/kb/guardrails-research-design.md`](docs/kb/guardrails-research-design.md)
-  (спецификация полигона), [`docs/kb/guardrails-break-even.md`](docs/kb/guardrails-break-even.md)
-  (порог `L*`).
+- [`docs/guardrails_requirements.md`](docs/guardrails_requirements.md) — требования к полигону
+  (FR/NFR) и «Отклонения канона»; [`docs/glossary.md`](docs/glossary.md) — словарь терминов.
+- [`docs/kb/README.md`](docs/kb/README.md) — индекс базы знаний: спецификация полигона
+  [`docs/kb/guardrails-research-design.md`](docs/kb/guardrails-research-design.md),
+  порог `L*` — [`docs/kb/guardrails-break-even.md`](docs/kb/guardrails-break-even.md),
+  риски и протоколы — [`docs/kb/guardrails-research-risks.md`](docs/kb/guardrails-research-risks.md).
 - Сводка по исследовательским кампаниям —
   [`docs/kb/research-cycles/overall_cycle.md`](docs/kb/research-cycles/overall_cycle.md).
 
