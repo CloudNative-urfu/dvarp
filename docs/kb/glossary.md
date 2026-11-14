@@ -84,7 +84,7 @@
 - Единые формы: «гвардрейл» (не «guardrail» внутри русского текста), «базовая линия»,
   «прогон», «эскалация», «исполнитель», «оценщик», «полигон», «прототип», «харнес».
 - «Стенд» = «прототип» (1.2): наш бизнес-процесс с обвязками для исследования. Стендом не
-  называем фабрику/полигон; в старых доках `docs/research-cycles/` «стенд» иногда означает
+  называем фабрику/полигон; в старых доках `docs/kb/research-cycles/` «стенд» иногда означает
   установку конкретного цикла — по канону читать как «прототип/стенд».
 - «Кампания» — работа фабрики; «цикл» — одна итерация кампании (см. раздел 2).
 
@@ -160,7 +160,7 @@
 - **Цикл (cycle)** — полный проход конвейера по стадиям; новый цикл стартует в пустом
   `cycles/NN/work` и создаёт реализацию с нуля, получая память предыдущих через handoff
   (`фабрика: nix/_research/README.md` §5). Итоги циклов кампании defense описаны в
-  `docs/research-cycles/cycle_1.md` … `cycle_9.md` и `docs/research-cycles/overall_cycle.md`.
+  `docs/kb/research-cycles/cycle_1.md` … `cycle_9.md` и `docs/kb/research-cycles/overall_cycle.md`.
 - **Стадия (stage)** — шаг пайплайна: v1 — `research → plan → build → experiment → report →
   verify → review → confirm`; v2 добавляет `idea_review → pilot_plan → pilot → pilot_review`
   (`фабрика: docs/METHODOLOGY.md`, `фабрика: nix/_research/WORKFLOW-V2.md`).
@@ -175,7 +175,7 @@
 - **Критик (critic) / независимая критика** — внешний агент-ревизор: получает неизменяемую
   копию материалов, выдаёт вердикт `accept/revise/pivot/blocked`, score 0..4, issues с
   severity/evidence/fix (`фабрика: nix/_research/critic.md`). Утрата «независимости критика»
-  при переводе на общий бэкенд — открытая проблема кампании (`docs/research-cycles/overall_cycle.md`).
+  при переводе на общий бэкенд — открытая проблема кампании (`docs/kb/research-cycles/overall_cycle.md`).
 - **Пилот (pilot)** — малая проверка идеи до большого эксперимента (лимиты ~100 запросов /
   1800 сек): интерфейс, need-for-LLM, различимость механизма, выполнимость бюджета;
   «не является подтверждением эффективности» (`фабрика: nix/_research/WORKFLOW-V2.md`).
@@ -184,10 +184,10 @@
 - **Гейт (gate)** — обязательное булево условие приёмки: `reproducible`,
   `hypothesis_supported`, `useful`, `relevant`, `valid_evaluation`, `scenario_diversity`,
   `guardrail_depth` и др. (`фабрика: nix/_research/README.md` §4). В циклах 1–9 — серия
-  замороженных шлюзов G0–G8, G-τ, G-break, resource gate (`docs/research-cycles/cycle_2.md`,
+  замороженных шлюзов G0–G8, G-τ, G-break, resource gate (`docs/kb/research-cycles/cycle_2.md`,
   `cycle_7.md`).
 - **need-for-LLM** — обязательный гейт «LLM лучше детерминированного соперника»; в кампании
-  defense не проходился пять циклов подряд (`docs/research-cycles/overall_cycle.md`).
+  defense не проходился пять циклов подряд (`docs/kb/research-cycles/overall_cycle.md`).
 - **Кандидаты (candidates)** — реализации, принятые критиком в `review`; ранжируются и
   независимо подтверждаются по очереди (`confirm`) до первого успешного
   (`фабрика: nix/_research/README.md` §4).
@@ -197,7 +197,7 @@
 - **Handoff (handoff.json)** — «память предыдущих результатов»: факты, провалы, неизвестные,
   уроки (lessons) и критика прошлых циклов, передаваемые новому циклу; исходники прежнего MVP
   не копируются (`фабрика: nix/_research/README.md` §5). В dvarp-доках кампании — «17 уроков»
-  c1-issue0…c7-issue1 (`docs/research-cycles/cycle_9.md`).
+  c1-issue0…c7-issue1 (`docs/kb/research-cycles/cycle_9.md`).
 - **deep_case** — режим глубокой проработки кейса: готовая постановка из внешних документов
   доводится до исполняемой zero-версии полигона; гейтов нет, сбой ведёт к ремонту; пайплайн
   `decompose → build:<компонент> → integrate → fix → report → critique`
@@ -222,7 +222,7 @@
 - **Оператор** — человек в контуре: операторские согласования (approvals) в магазине,
   операторские квитанции переходов стадий, решения при `pivot/stop/blocked`;
   **операторская остановка** — прекращение эксперимента человеком (`фабрика: nix/_research/COEVOLUTION.md`;
-  «кампания ограничена семью циклами» — `docs/research-cycles/cycle_7.md`).
+  «кампания ограничена семью циклами» — `docs/kb/research-cycles/cycle_7.md`).
 - **Экспериментальная модель** — отдельный ресурс, не модель исследователя/критика:
   `qwen/qwen3.5-9b`; ключ OpenRouter не авторизует исследователя и критика
   (`фабрика: docs/OPERATIONS.md`, README).
@@ -249,8 +249,8 @@
   (`docs/guardrails-as-a-vector-of-attack.md`); «рамка окупаемости» — её экономическая часть.
 - **Канон** — зафиксированные неизменяемые решения рамки: один бизнес-процесс возвратов,
   5 инструментов, 3 модели-агента, 3 политики реакции, ориентир ≤16B
-  (`docs/guardrails-research-design.md` §10); отклонения канона фиксируются в
-  `docs/guardrails_requirements.md` §3.
+  (`docs/kb/guardrails-research-design.md` §10); отклонения канона фиксируются в
+  `docs/kb/guardrails_requirements.md` §3.
 - **Итерация 1 / итерация 2** — стадии проекта: доменное исследование (завершена) и реализация
   полигона (README «Статус»).
 - **Бизнес-процесс** — моделируемый процесс обработки возвратов интернет-магазина; канон:
@@ -259,49 +259,49 @@
   взаимодействующие строго через канал (`docs/guardrails-as-a-vector-of-attack.md` §4.1).
   Канон: внутренние агенты (1.3).
 - **Канал (единый текстовый канал)** — единственный способ взаимодействия сторон; все режимы
-  ввода подключаются за одним интерфейсом канала (`docs/guardrails_requirements.md` FR-1.2/1.4).
+  ввода подключаются за одним интерфейсом канала (`docs/kb/guardrails_requirements.md` FR-1.2/1.4).
 - **Барьер интерфейса** — инвариант изоляции: атакующий не видит внутренностей защиты,
   защищаемая сторона — устройства атакующего; **research-mode** — маркированное исключение с
   расширенной обратной связью (`docs/guardrails-as-a-vector-of-attack.md` §4.2;
-  `docs/guardrails_requirements.md` FR-1.3).
+  `docs/kb/guardrails_requirements.md` FR-1.3).
 - **Исполнитель (executor)** — код, выполняющий только разрешённые действия и проверяющий
   права; «исполнитель не является гвардрейлом» (`docs/guardrails-as-a-vector-of-attack.md` §3.3/4.3).
 - **Оценщик (evaluator)** — независимая сверка состояния БД с ожидаемым; «ответ модели — не
-  доказательство» (`docs/guardrails_requirements.md` FR-1.18). В фабрике ту же роль играет
+  доказательство» (`docs/kb/guardrails_requirements.md` FR-1.18). В фабрике ту же роль играет
   арбитр/judge (`фабрика: nix/_research/COEVOLUTION.md` §A/§C).
 - **Ground truth / дифф состояния** — истина по изменению состояния БД, а не по тексту агента
-  (`docs/guardrails-research-design.md` §6).
+  (`docs/kb/guardrails-research-design.md` §6).
 - **Журнал (журнал затрат)** — единый лог событий и затрат по компонентам; «без него метрики
-  не считаются» (`docs/guardrails_requirements.md` FR-1.17).
+  не считаются» (`docs/kb/guardrails_requirements.md` FR-1.17).
 - **Движок метрик (metrics-svc)** — переносимый сервис расчёта финальных метрик из сырой
   телеметрии; единственная точка правды по формулам, СС и полигон телеметрию не
   интерпретируют; сначала реализуется в СС по паттерну `svckit`, спроектирован под перенос
-  на полигон (`docs/guardrails-research-design.md` §11).
+  на полигон (`docs/kb/guardrails-research-design.md` §11).
 - **Эпизод** — единица взаимодействия, по которой фиксируются исход и стоимость
   (`docs/guardrails-as-a-vector-of-attack.md` §4.5). Не путать с эпизодом кампании (ЭК, 1.5) —
   единицей исследования в фабрике.
 - **Снимок / хранилище состояния (snapshot)** — снятие и восстановление состояния перед каждым
-  эпизодом; обязательно для прогона-микса (`docs/guardrails_requirements.md` NFR-2.1).
+  эпизодом; обязательно для прогона-микса (`docs/kb/guardrails_requirements.md` NFR-2.1).
 - **Ручная очередь (очередь ручных разборов)** — аналитическая модель (M/M/1 при одном
   операторе; M/M/c — Эрланг C — при K > 1) с явными допущениями (интенсивность потока,
   время обслуживания, число операторов) и сеткой чувствительности K×S; эскалации легальных
   и атакующих обращений общие; уход клиентов не моделируется (non-claim: клиент терпелив)
   (`docs/guardrails-as-a-vector-of-attack.md` §4.3, FR-1.15/1.16). **Живой оператор** —
-  non-claim: «это модель, а не живой оператор» (`docs/guardrails-research-design.md` §3).
+  non-claim: «это модель, а не живой оператор» (`docs/kb/guardrails-research-design.md` §3).
 - **Эскалация** — передача случая человеку в ручную очередь; и канал убытка, и метрика
   `E(g) = w_L·E_L(g) + w_A·E_A(g)` (отчёт разделяет классы трафика: `E_L` — легальные эпизоды,
-  включая FP; `E_A` — атакующие) (`docs/guardrails-break-even.md` §9.1).
+  включая FP; `E_A` — атакующие) (`docs/kb/guardrails-break-even.md` §9.1).
 - **Легальный поток / легальный трафик** — обращения законных клиентов, на которых измеряется
-  ущерб от защиты (`docs/guardrails-break-even.md` §9.1).
+  ущерб от защиты (`docs/kb/guardrails-break-even.md` §9.1).
 - **Плагин / единый контракт гвардрейла** — гвардрейл подключается как плагин: вход (текст,
   контекст с происхождением, задача, вызов инструмента), выход — `allow/flag/block` или оценка
   (`docs/guardrails-as-a-vector-of-attack.md` §4.4; FR-1.5–1.9).
 - **Место установки** — точка подключения гвардрейла: вход / выход / инструмент / контекст /
   среда / реакция (`docs/guardrails-as-a-vector-of-attack.md` §3.2).
 - **Политика реакции** — что происходит при сигнале: продолжить / изолировать / уточнить /
-  ручная проверка / безопасное завершение (`docs/guardrails-research-design.md` §4).
+  ручная проверка / безопасное завершение (`docs/kb/guardrails-research-design.md` §4).
 - **Конфигурация `g`** — комбинация «набор гвардрейлов + место + политика + пороги»;
-  «конфигурация — данные, а не код» (`docs/guardrails-research-design.md` §4).
+  «конфигурация — данные, а не код» (`docs/kb/guardrails-research-design.md` §4).
 - **`g0`** — базовая линия «агент + исполнитель без гвардрейлов», обязательная точка отсчёта
   (README; `docs/guardrails-as-a-vector-of-attack.md` §5).
 - **`g_proc`** — `g0` + сильные правила процесса, квоты, дедупликация; «обязательный соперник»
@@ -311,18 +311,18 @@
 - **Прогон-микс (mixed-flow run)** — прогон как смешанный поток легальных и атакующих
   эпизодов на идентичном начальном состоянии (детерминированный снимок с проверкой хеша);
   состав потока задаётся настройками полигона; сравнение конфигураций — на общей выборке
-  при фиксированных seed'ах (`docs/guardrails_requirements.md` NFR-2.8;
-  `docs/guardrails-research-design.md` §11). Парные легальные потоки (сравнение с/без
+  при фиксированных seed'ах (`docs/kb/guardrails_requirements.md` NFR-2.8;
+  `docs/kb/guardrails-research-design.md` §11). Парные легальные потоки (сравнение с/без
   атакующего трафика) исключены — отклонение канона от 2026-11-13.
 - **Замороженный протокол (frozen protocol)** — пороги и конфигурация не меняются во время
   прогонов против адаптивного атакующего (NFR-2.10). **Pre-registration** — фиксация гипотез,
   конфигураций и метрик до итогового теста; добавленное после — «постфактум / post hoc»
-  (`docs/guardrails-research-risks.md` §7).
+  (`docs/kb/guardrails-research-risks.md` §7).
 - **Режимы `D` / `A`** — режимы атакующего; канон: только эти два (`docs/guardrails-as-a-vector-of-attack.md`
   §10): `D` — детерминированный корпус сообщений (многошаговые сценарии — заранее заданные
   последовательности, не зависящие от ответов агента), `A` — адаптивный LLM-агент (адаптивное
   построение диалога — только этот режим). Встречающееся в
-  `docs/guardrails-research-risks.md` упоминание `T` неканонично (устаревшее, не определено).
+  `docs/kb/guardrails-research-risks.md` упоминание `T` неканонично (устаревшее, не определено).
 - **Адаптивный атакующий** — противник, подстраивающийся под наблюдаемую обратную связь;
   бьёт по «недопредставленным механизмам» (`docs/guardrails-literature-review.md` §4.2).
 - **Синтетика / синтетические данные** — «без реальных платежей и отправлений», без реальных
@@ -352,7 +352,7 @@
 - **Потеря сюжета обращения** — метрика полезности: агент не довёл тему клиента до конца
   (§1/§8 рамки).
 - **Канарейка / приманка (canary / decoy)** — маркерные элементы для детекта утечек и
-  инъекций-приманок в документах (`docs/research-cycles/cycle_6.md` §3, `cycle_7.md` §5).
+  инъекций-приманок в документах (`docs/kb/research-cycles/cycle_6.md` §3, `cycle_7.md` §5).
 - **Payload** — «вредоносная нагрузка» атаки (`docs/guardrails-literature-review.md` §4.2).
 - **Паспорт атаки (attack card)** — артефакт сценария: источник, возможности атакующего,
   граница доверия, нарушаемый инвариант, oracle, критерий успеха
@@ -362,51 +362,51 @@
 - **Oracle** — независимый критерий успеха атаки по БД/журналам, не по словам агента
   (`фабрика: nix/_research/EVALUATION-METHOD.md`).
 - **Held-out** — скрытый набор, не вскрываемый до фиксации конфигурации/автора
-  (`docs/research-cycles/overall_cycle.md` «Дисциплина»).
+  (`docs/kb/research-cycles/overall_cycle.md` «Дисциплина»).
 
 ## 5. Экономическая модель (break-even)
 
 - **Экономический порог окупаемости `L*`** — цена одного исполненного нарушения, при которой
   данная конфигурация защиты окупается; итоговый формат ответа полигона вместо вердикта
-  «выгодно/невыгодно» (README; `docs/guardrails-break-even.md` §9.2).
+  «выгодно/невыгодно» (README; `docs/kb/guardrails-break-even.md` §9.2).
 - **break-even** — общее название экономической модели/расчёта окупаемости.
 - **`L_viol`** — цена одного исполненного нарушения; задаётся владельцем процесса
-  (`docs/guardrails-break-even.md` §9.1).
+  (`docs/kb/guardrails-break-even.md` §9.1).
 - **`V(g)` / `R(g)` / `Q(g)` / `E(g)`** — метрики конфигурации: доля исполненных нарушений,
   необоснованных отказов, задержка легального потока (аналитическая, M/M/1 при одном операторе;
   M/M/c — Эрланг C — при K > 1, от измеренной `E(g)`), доля эскалаций — измеряется в прогоне-миксе
-  (`docs/guardrails-research-design.md` §6).
+  (`docs/kb/guardrails-research-design.md` §6).
 - **`ΔNet(g)` / `F(g)` («трение») / `S(g)`** — чистый выигрыш, «ожидаемое трение» относительно
   `g0`, выигрыш в безопасности (§7 design-дока).
 - **`C_guard(g)` / `C_ep(g)` / `C_refuse` / `C_queue` / `C_manual`** — стоимости: работы
   гвардрейлов, обслуживания атакующего трафика, необоснованного отказа, простоя в очереди,
-  ручного разбора (`docs/guardrails-break-even.md` §9.1).
+  ручного разбора (`docs/kb/guardrails-break-even.md` §9.1).
 - **`w_A` / `w_L`** — доли атакующего и легального трафика в формуле (§7 design-дока).
 - **У1–У4** — утверждения формального аппарата: доминирование, существование порога,
   немонотонность, бюджетное размещение (0/1-рюкзак) (§8 design-дока).
 - **leave-one-out** — способ выделить «чистый расход» гвардрейла: убрать его и перегнать
-  конфигурацию (`docs/guardrails-break-even.md` §9.3).
+  конфигурацию (`docs/kb/guardrails-break-even.md` §9.3).
 - **Pareto-фронт** — отчёт по осям «снижение нарушений × стоимость»; конфигурации вне фронта
   доминируются. **ROI-кривая** — семейство оптимумов `g*(B)` по бюджету; «ROI-кривая вместо
-  рейтинга» (`docs/guardrails-research-risks.md` §5.6).
+  рейтинга» (`docs/kb/guardrails-research-risks.md` §5.6).
 - **Недопустимая конфигурация** — увеличивает нарушения или делает очередь нестабильной;
-  бракуется при любом `L_viol` (`docs/guardrails-break-even.md` §9.2).
+  бракуется при любом `L_viol` (`docs/kb/guardrails-break-even.md` §9.2).
 - **`τ* = 1 − c_ℓ/c_w`** — порог эскалации из Act-or-Escalate; «буквально break-even… наш L*»
-  (`docs/methodology/act-or-escalate.md` §4).
+  (`docs/kb/methodology/act-or-escalate.md` §4).
 - **Рабочая точка / leakage / matched-FPR** — методологические заимствования Gate AI: фиксация
-  порога, контроль утечек, сравнение при выровненном FPR (`docs/methodology/gate-ai.md`).
+  порога, контроль утечек, сравнение при выровненном FPR (`docs/kb/methodology/gate-ai.md`).
 
 ## 6. Дисциплина и артефакты кампаний
 
 - **Brief (brief.md)** — входное задание цикла: цель, ресурс, дисциплина, приёмка; в
   verified-raw-data хранятся как `brief_1.md` … `brief_9.md`
-  (`docs/research-cycles/verified-raw-data/incoming/`).
+  (`docs/kb/research-cycles/verified-raw-data/incoming/`).
 - **Progress (progress.md)** — поэтапный журнал агента-исследователя: «Блок 0…Блок N» +
-  «Следующий шаг» (`docs/research-cycles/verified-raw-data/incoming/progress_*.md`).
+  «Следующий шаг» (`docs/kb/research-cycles/verified-raw-data/incoming/progress_*.md`).
 - **Verified-raw-data (верифицированные сырые данные)** — каталог исходных артефактов
   кампании, хранимых «как есть» (README «Что внутри»).
 - **Lessons / lesson_plan** — уроки предыдущих циклов и план их отработки на новом цикле
-  (`docs/research-cycles/cycle_8.md` §1, `cycle_9.md` §3).
+  (`docs/kb/research-cycles/cycle_8.md` §1, `cycle_9.md` §3).
 - **Workflow-contract.json** — контракт стадий конвейера (валидация артефактов стадии).
 - **Prior-evidence** — доказательная база предыдущего цикла (review, pilot_results, candidates,
   sources).
@@ -416,22 +416,22 @@
 - **Харнес (harness)** — канон: программная часть атакующего агента (АГ), управляющая
   выполнением операций, инструментами и расходованием ресурсов (1.5). В разборах методологий
   «Harness» — обвязка среды работы (environment + tools + логи), первый раздел каждого разбора
-  (`docs/methodology/README.md`).
+  (`docs/kb/methodology/README.md`).
 - **Trap-деталь** — обязательный раздел разбора «что ломается при reproduce»
-  (`docs/methodology/README.md`).
+  (`docs/kb/methodology/README.md`).
 - **Перенос / Адаптация / Непереносимо** — вердиктная триада разборов: что идёт в полигон
-  напрямую / через адаптацию / непереносимо, с FR/NFR (`docs/methodology/README.md`).
+  напрямую / через адаптацию / непереносимо, с FR/NFR (`docs/kb/methodology/README.md`).
 - **Confirmation** — подтверждающий эксперимент на замороженном протоколе; без него вердикт
-  цикла получает статус `inconclusive_*` (`docs/research-cycles/cycle_1.md` §5).
+  цикла получает статус `inconclusive_*` (`docs/kb/research-cycles/cycle_1.md` §5).
 - **Holdout / dev (dev_calib)** — разделение выборок: «holdout не вскрывается до заморозки
-  конфига» (`docs/research-cycles/overall_cycle.md`).
+  конфига» (`docs/kb/research-cycles/overall_cycle.md`).
 - **Honest accounting (честный раздельный учёт)** — неизвестные расходы помечаются `null`,
-  «не заменяются нулём» (`docs/research-cycles/overall_cycle.md`).
+  «не заменяются нулём» (`docs/kb/research-cycles/overall_cycle.md`).
 - **Replay** — повторный независимый пересчёт исходов из raw-журналов; «проверка из чистой
-  копии» (`docs/research-cycles/cycle_1.md` §5).
+  копии» (`docs/kb/research-cycles/cycle_1.md` §5).
 - **Дефект поставки** — повторяющийся паттерн кампании: обязательные артефакты
   (`dispatches.jsonl`, `sources.json`, `memory.json`, `pilot_results.json`) отсутствуют при
-  «успешном» verifier (`docs/research-cycles/cycle_1.md` §5).
+  «успешном» verifier (`docs/kb/research-cycles/cycle_1.md` §5).
 - **Fixtures (фикстуры)** — тестовые данные; «нельзя трактовать тестовые fixtures как
   подтверждённые исследовательские результаты» (`фабрика: README.md`).
 - **Снимок (snapshot) / manifest.json** — неизменяемый слепок работы цикла с SHA-256-манифестом;
@@ -439,25 +439,25 @@
 - **Provenance** — происхождение артефактов: `source-manifest.json` (SHA-256 каждого
   перенесённого файла), `candidate/provenance.json` (`фабрика: docs/PROVENANCE.md`).
 - **Harness-классы (COD / WEB / OPS / OFF / MAS / MEM)** — классы сред пула цикла 8: coding,
-  browser, operations, office, multi_agent, persistent_memory (`docs/research-cycles/cycle_8.md`).
+  browser, operations, office, multi_agent, persistent_memory (`docs/kb/research-cycles/cycle_8.md`).
 - **Проектные коды кандидатов (C8-OPS-GRB, C8-COD-TIG…)** — идентификаторы идей
-  «цикл-среда-защита» (`docs/research-cycles/cycle_8.md` §1).
+  «цикл-среда-защита» (`docs/kb/research-cycles/cycle_8.md` §1).
 - **OPS-стенд** — переиспользуемый актив кампании: bwrap + prober + живые процессы + адаптеры
-  (`docs/research-cycles/overall_cycle.md` «Готовые активы»); собственное имя актива, не
+  (`docs/kb/research-cycles/overall_cycle.md` «Готовые активы»); собственное имя актива, не
   канонический «стенд» (1.2).
 - **Реестр гвардрейлов** — актив: 45 записей с pin/license/compatibility_probe
-  (`docs/research-cycles/cycle_8.md` §1).
+  (`docs/kb/research-cycles/cycle_8.md` §1).
 - **Runbook (D0-runbook)** — детерминированный скрипт-соперник, замороженный до первого
-  запроса (`docs/research-cycles/cycle_8.md` §3).
-- **Prober** — независимый монитор живых процессов с шагом 0.5 с (`docs/research-cycles/cycle_8.md` §3).
+  запроса (`docs/kb/research-cycles/cycle_8.md` §3).
+- **Prober** — независимый монитор живых процессов с шагом 0.5 с (`docs/kb/research-cycles/cycle_8.md` §3).
 - **Compatibility_probe** — плановая проверка совместимости гвардрейла с маршрутом модели
-  (`docs/research-cycles/cycle_9.md` §5).
+  (`docs/kb/research-cycles/cycle_9.md` §5).
 - **Семейства политик циклов: `D0` / `H` / `B-*` / `Bstar`** — D0 — детерминированный baseline
   без LLM; H — искомая политика гипотезы; B-* — семейство бейзлайнов (B0–B6, B-hybrid,
   B-progress, B-cap, B-long, B-big, B-sys, B-snap, B-rolling); Bstar — лучшая выбранная
-  бейзлайн-политика для confirmation (`docs/research-cycles/cycle_1.md`, `cycle_6.md`).
+  бейзлайн-политика для confirmation (`docs/kb/research-cycles/cycle_1.md`, `cycle_6.md`).
 - **BEIS, TAQ** — кодовые имена гипотез циклов 6 и 7 (обе опровергнуты)
-  (`docs/research-cycles/cycle_6.md`, `cycle_7.md`).
+  (`docs/kb/research-cycles/cycle_6.md`, `cycle_7.md`).
 
 ## 7. Процесс репозиториев
 
@@ -471,7 +471,7 @@
   commitizen и блокирующим CI (AGENTS.md, CONTRIBUTING.md).
 - **Squash-merge** — слияние PR одним коммитом; заголовок PR должен быть conventional.
 - **`FR-…` / `NFR-…`** — ID функциональных и нефункциональных требований к полигону
-  (`docs/guardrails_requirements.md`); в deep_case извлекаются в `case/case.json`.
+  (`docs/kb/guardrails_requirements.md`); в deep_case извлекаются в `case/case.json`.
 - **`research-mode`** — маркировка исследовательского режима стенда, отдельная от обычного
   сценария (FR-1.3; `фабрика: examples/deep_case.dvarp.md`).
 
@@ -514,7 +514,7 @@
 
 ## 9. Ландшафт прод-поддержки (контакт-центровый словарь)
 
-Термины из `docs/landscape/prod-support-processes.md`, из которых собираются параметры
+Термины из `docs/kb/landscape/prod-support-processes.md`, из которых собираются параметры
 прототипа/стенда:
 
 | Термин | Значение |
