@@ -8,29 +8,42 @@
 
 ## Что внутри
 
+Документация разделена на два слоя (`docs/README.md` — карта и критерии):
+человеко-читаемые документы для ознакомления и база знаний для агентов с каноном.
+
 | Путь | Содержимое |
 |---|---|
-| `docs/` | Доменное исследование: рамка, требования к полигону, обзор поля, риски, экономическая модель |
-| `docs/landscape/` | Обзор продакшен-процессов поддержки с чат-агентами: кейсы внедрений, метрики, референсные архитектуры |
-| `docs/methodology/` | Разбор методологий ближайших работ и OSS-ассетов литобзора: что переносится в полигон напрямую, что через адаптацию, что непереносимо (#7) |
-| `docs/research-cycles/` | Итоги исследовательских кампаний: разбор 9 циклов + верифицированные сырые данные |
+| `docs/` | Человеко-читаемый слой: рамка исследования, новизна, адресаты, обзор поля, черновик статьи |
+| `docs/kb/` | База знаний для агентов: требования (FR/NFR) и «Отклонения канона», спецификация полигона, формулы `L*`, реестр рисков, словарь терминов |
+| `docs/kb/methodology/` | Разбор методологий ближайших работ и OSS-ассетов литобзора: что переносится в полигон напрямую, что через адаптацию, что непереносимо (#7) |
+| `docs/kb/landscape/` | Обзор продакшен-процессов поддержки с чат-агентами: кейсы внедрений, метрики, референсные архитектуры |
+| `docs/kb/research-cycles/` | Итоги исследовательских кампаний: разбор 9 циклов + верифицированные сырые данные |
 | `docs/paper/` | Черновик статьи (введение, обзор, постановка, методология; практическая часть — итерация 2) |
+| `docs_archive/` | Архив: датированные обзоры, сырые каталоги статей |
 | `.github/` | CI-проверки процесса (стиль коммитов) |
 
 ## Как читать
 
+Для ознакомления (человеко-читаемый слой):
+
 1. [`docs/guardrails-as-a-vector-of-attack.md`](docs/guardrails-as-a-vector-of-attack.md) — рамка
    исследования: границы, объекты, метрики.
-2. [`docs/guardrails_requirements.md`](docs/guardrails_requirements.md) — систематизированные
-   требования к полигону.
-3. [`docs/guardrails-literature-review.md`](docs/guardrails-literature-review.md) — обзор поля и
+2. [`docs/guardrails-literature-review.md`](docs/guardrails-literature-review.md) — обзор поля и
    research gap.
-4. [`docs/guardrails-research-design.md`](docs/guardrails-research-design.md) — общий вид
-   полигона и исследования.
-5. [`docs/guardrails-break-even.md`](docs/guardrails-break-even.md) — экономическая модель и
-   порог `L*`.
-6. [`docs/research-cycles/overall_cycle.md`](docs/research-cycles/overall_cycle.md) — сводка по
-   исследовательским кампаниям.
+3. [`docs/guardrails-usp.md`](docs/guardrails-usp.md) и
+   [`docs/guardrails-target-audience.md`](docs/guardrails-target-audience.md) — новизна и адресаты
+   исследования.
+4. [`docs/paper/draft.md`](docs/paper/draft.md) — черновик статьи.
+
+Для агентов (канон и формулы — база знаний):
+
+- [`docs/kb/README.md`](docs/kb/README.md) — индекс базы знаний; канон:
+  [`docs/kb/guardrails_requirements.md`](docs/kb/guardrails_requirements.md) (FR/NFR,
+  «Отклонения канона»), [`docs/kb/guardrails-research-design.md`](docs/kb/guardrails-research-design.md)
+  (спецификация полигона), [`docs/kb/guardrails-break-even.md`](docs/kb/guardrails-break-even.md)
+  (порог `L*`).
+- Сводка по исследовательским кампаниям —
+  [`docs/kb/research-cycles/overall_cycle.md`](docs/kb/research-cycles/overall_cycle.md).
 
 ## Методология вкратце
 
@@ -55,7 +68,7 @@ pre-registration; порог `L*` сопровождается анализом 
 
 - [`agent-research-factory`](https://github.com/CloudNative-urfu/agent-research-factory) —
   конвейер автономных исследовательских кампаний (постановка → пилот → эксперимент → независимая
-  критика), из которого получены данные циклов в `docs/research-cycles/`.
+  критика), из которого получены данные циклов в `docs/kb/research-cycles/`.
 
 ## Команда
 

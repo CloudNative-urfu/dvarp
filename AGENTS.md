@@ -2,6 +2,8 @@
 
 Проект: **DVARP (Defense as Vector of Attack Research Platform)** — исследовательский полигон для ИИ-агентов в
 кибербезопасности. Полное описание — `README.md` и главный док `docs/guardrails-as-a-vector-of-attack.md`.
+Для агентов: канон и формулы — база знаний `docs/kb/` (индекс — `docs/kb/README.md`);
+человеко-читаемые документы (`docs/`) источником требований не являются.
 
 Репозиторий: `CloudNative-urfu/dvarp`
 Доска проекта: https://github.com/orgs/CloudNative-urfu/projects/1
